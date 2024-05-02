@@ -52,10 +52,10 @@ function renderDetails(superheroes) {
     superheroInfoDiv.append(favBtn);
 
     favBtn.addEventListener("click", function () {
-      let foundItem;
-
       if (myStoredArray) {
-        foundItem = myStoredArray.find((item) => {
+        favArray.push(...myStoredArray, favBtn.id);
+
+        let foundItem = myStoredArray.find((item) => {
           return item === favBtn.id;
         });
         if (foundItem) {
@@ -64,7 +64,6 @@ function renderDetails(superheroes) {
           favBtn.setAttribute("disabled", "true");
           alert("Added to Favourites");
         }
-        favArray.push(...myStoredArray, favBtn.id);
       } else {
         favArray.push(favBtn.id);
       }
