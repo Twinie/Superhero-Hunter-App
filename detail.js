@@ -1,4 +1,4 @@
-const superHeroList = document.querySelector(".superhero-detail");
+const superHeroList = document.querySelector(".superhero-detail-wrap");
 const publicKey = "f7e4bcda8599f047bf210e922b0806f9";
 const prvtKey = "19c90f9fb46aa5a0452f8dd058345d777d7a5a2a";
 const ts = new Date().getTime();
