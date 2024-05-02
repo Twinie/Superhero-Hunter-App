@@ -52,16 +52,18 @@ function renderDetails(superheroes) {
     superheroInfoDiv.append(favBtn);
 
     favBtn.addEventListener("click", function () {
-      let foundItem = myStoredArray.find((item) => {
-        return item === favBtn.id;
-      });
-      if (foundItem) {
-        alert("The Superhero is already added to Favourites");
-      } else {
-        favBtn.setAttribute("disabled", "true");
-        alert("Added to Favourites");
-      }
+      let foundItem;
+
       if (myStoredArray) {
+        foundItem = myStoredArray.find((item) => {
+          return item === favBtn.id;
+        });
+        if (foundItem) {
+          alert("The Superhero is already added to Favourites");
+        } else {
+          favBtn.setAttribute("disabled", "true");
+          alert("Added to Favourites");
+        }
         favArray.push(...myStoredArray, favBtn.id);
       } else {
         favArray.push(favBtn.id);
