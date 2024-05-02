@@ -21,7 +21,8 @@ const characterDetail = async () => {
 };
 characterDetail();
 
-//to push the items in renderingFavSuperheroArr after finding the id present in myStoredArray in the response we are getting from API call
+/* to push the items in renderingFavSuperheroArr after finding the "id present in myStoredArray" in the response we are 
+getting from API call */
 function displayFavourites(favItems) {
   myStoredArray = JSON.parse(localStorage.getItem("myfavArray"));
   // console.log(myStoredArray);

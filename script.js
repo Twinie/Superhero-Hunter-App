@@ -51,19 +51,19 @@ function renderDetails(superheroes) {
     favBtn.setAttribute("id", superHero.id);
     superheroInfoDiv.append(favBtn);
 
+    if (myStoredArray) {
+      let foundItem = myStoredArray.find((item) => {
+        return item === favBtn.id;
+      });
+      if (foundItem) {
+        favBtn.setAttribute("disabled", "true");
+      }
+    }
     favBtn.addEventListener("click", function () {
+      favBtn.setAttribute("disabled", "true");
+      alert("Added to Favourites");
       if (myStoredArray) {
         favArray.push(...myStoredArray, favBtn.id);
-
-        let foundItem = myStoredArray.find((item) => {
-          return item === favBtn.id;
-        });
-        if (foundItem) {
-          alert("The Superhero is already added to Favourites");
-        } else {
-          favBtn.setAttribute("disabled", "true");
-          alert("Added to Favourites");
-        }
       } else {
         favArray.push(favBtn.id);
       }

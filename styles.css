@@ -18,6 +18,11 @@ button{
     border-radius: 4px;
 }
 
+button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
 .header{
     display: flex;
     justify-content: space-between;
@@ -27,6 +32,7 @@ button{
 
 input[type="search" i] {
     width: 800px;
+    max-width: 100%;
     color: var(--primary-color);
     display: block;
     margin: auto;
@@ -47,8 +53,12 @@ header form{
     opacity: 0.9;
 }
 
-.header .logo img{
+.header .logo{
     width: 180px;
+}
+
+.header .logo img{
+    max-width: 100%;
     height: auto;
 }
 
@@ -76,8 +86,9 @@ header form{
 }
 
 .superhero-list{
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
 }
 
 .superhero{
@@ -117,6 +128,9 @@ header form{
 }
 
 .superhero-detail{
+    max-width: 1600px;
+    margin: auto;
+    margin-top: 100px;
     color: var(--primary-color);
     text-decoration: none;
     font-size: 16px;
@@ -125,6 +139,8 @@ header form{
 
 .detail-container{
     display: flex;
+    flex-wrap: wrap;
+    padding: 0 50px;
     gap: 70px;
 }
 
@@ -150,7 +166,7 @@ header form{
 }
 
 .detail-container .info-container{
-    width: 60%;
+    width: 55%;
 }
 
 @media(max-width: 768px){
@@ -159,5 +175,22 @@ header form{
     }
     .superhero-list{
         justify-content: center;
+    }
+}
+
+@media(max-width: 1200px){
+    .detail-container .info-container{
+        width: 90%;
+    }
+        
+    .detail-container .img-container{
+        width: 60%;
+    }
+}
+
+@media(min-width: 1500px){
+    .superhero-list{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
     }
 }
